@@ -10,4 +10,9 @@ describe Game do
       described_class.new(board_size)
     end
   end
+  describe '#board' do
+    it 'returns the board' do
+      expect(subject.board).to be_a(Board)
+    end
+  end
 end
