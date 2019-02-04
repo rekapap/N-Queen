@@ -15,4 +15,9 @@ describe Game do
       expect(subject.board).to be_a(Board)
     end
   end
+  describe '#number_of_queens' do
+    it 'returns the queens\' number' do
+      expect(game.number_of_queens).to eq(board_size)
+    end
+  end
 end
