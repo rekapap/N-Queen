@@ -6,5 +6,6 @@ class Main
 
   def setup
     puts(BOARD_SIZE_QUESTION)
+    gets.chomp.to_i
   end
 end
