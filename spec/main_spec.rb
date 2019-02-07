@@ -1,9 +1,13 @@
 require 'main'
+require 'game'
 
 describe Main do
   subject { described_class.new }
   let(:question_str) { Main::BOARD_SIZE_QUESTION }
   let(:eight) { '8' }
+  let(:game) { double :game }
+  # let(:game_class) { double :game_class, new: game}
+
   context 'setup' do
     before do
       io_object = double
@@ -20,6 +24,13 @@ describe Main do
       allow($stdout).to receive(:puts).with(question_str)
       expect(eight).to receive(:to_i)
       subject.setup
+    end
+
+    it 'creates a new game with the board size' do
+      allow($stdout).to receive(:puts).with(question_str)
+      allow(Game).to receive(:new).with(eight.to_i).and_return(game)
+      subject.setup
+      expect(subject.game).to eq(game)
     end
   end
 end
