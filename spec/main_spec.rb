@@ -6,7 +6,6 @@ describe Main do
   let(:question_str) { Main::BOARD_SIZE_QUESTION }
   let(:eight) { '8' }
   let(:game) { double :game }
-  # let(:game_class) { double :game_class, new: game}
 
   context 'setup' do
     before do
